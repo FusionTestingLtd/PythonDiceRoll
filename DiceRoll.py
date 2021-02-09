@@ -2,6 +2,7 @@ import random
 import sys
 
 
+# --------- DICE ROLL FUNCTION -------------
 def roll(userData):
     print("\n")
     print("{} {} {} {} {}".format("Using x", userData[0], ",", userData[1], "Sided Dice"))
@@ -16,7 +17,7 @@ def roll(userData):
     print("\n")
 
 
-# Get input from the user & set dataType to int
+# ------------- USER INPUT FUNCTION -------------------
 def getUserInput():
     while True:
         try:
@@ -43,6 +44,7 @@ def getUserInput():
     return dice, sides
 
 
+# ----------- MENU FUNCTION -----------------
 def menu():
     print("")
     print("1. Roll Dice")
@@ -61,14 +63,12 @@ def menu():
     return choice
 
 
+# ----------- THE MAIN PROGRAM -----------
 exitCode = 0
 while exitCode != 1:
     if menu() == 2:
-        # Exit the program.
         print("...Ending Program")
         exitCode = 1
         exit()
     else:
-        # Get the input from the user.
-        # Call the Dice Roll function...Dice, Sides Return 'Tuple'
         roll(getUserInput())
