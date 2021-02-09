@@ -25,6 +25,9 @@ def getUserInput():
             print("Invalid input.. please Enter a number")
             continue
         else:
+            if dice > 6 or dice < 1:
+                print("Invalid selection! (1-6) Try again...")
+                continue
             break
     while True:
         try:
@@ -33,6 +36,9 @@ def getUserInput():
             print("Invalid input.. please Enter a number")
             continue
         else:
+            if sides > 20 or sides < 4:
+                print("Invalid selection! (4-20) Try again..")
+                continue
             break
     return dice, sides
 
@@ -48,7 +54,7 @@ def menu():
             print("Invalid Selection! Try again...")
             continue
         else:
-            if choice > 2:
+            if choice > 2 or choice < 1:
                 print("Invalid Selection! Try again...")
                 continue
             break
