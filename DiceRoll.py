@@ -1,5 +1,4 @@
 import random
-import sys
 
 
 # --------- DICE ROLL FUNCTION -------------
@@ -29,15 +28,15 @@ def getUserInput():
             try:
                 float(dice)
             except ValueError:
-                print("Sorry you entered a string, Please enter a whole number")
+                print("Sorry you entered a string, Please enter a whole number\n")
                 continue
             else:
-                print("Sorry you entered a decimal number, Please enter a whole number")
+                print("Sorry you entered a decimal number, Please enter a whole number\n")
             continue
         else:
             dice = int(dice)
             if dice > 6 or dice < 1:
-                print("Out of range, try between 1 and 6")
+                print("Out of range, try between 1 and 6\n")
                 continue
             is_valid = 1
 
@@ -51,15 +50,15 @@ def getUserInput():
             try:
                 float(sides)
             except ValueError:
-                print("Sorry you entered a string, Please enter a whole number")
+                print("Sorry you entered a string, Please enter a whole number \n")
                 continue
             else:
-                print("Sorry you entered a decimal number, Please enter a whole number")
+                print("Sorry you entered a decimal number, Please enter a whole number\n")
             continue
         else:
             sides = int(sides)
             if sides > 20 or sides < 4:
-                print("Out of range, try between 4 and 20")
+                print("Out of range, try between 4 and 20\n")
                 continue
             is_valid = 1
     return dice, sides
