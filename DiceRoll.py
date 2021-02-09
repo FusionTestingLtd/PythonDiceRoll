@@ -19,28 +19,49 @@ def roll(userData):
 
 # ------------- USER INPUT FUNCTION -------------------
 def getUserInput():
-    while True:
+    # NUMBER OF DICE INPUT
+    is_valid = 0
+    while is_valid != 1:
+        dice = input("How many dice?")
         try:
-            dice = int(input("How many dice to roll?"))
+            int(dice)
         except ValueError:
-            print("You didn't enter a number :-)")
+            try:
+                float(dice)
+            except ValueError:
+                print("Sorry you entered a string, Please enter a whole number")
+                continue
+            else:
+                print("Sorry you entered a decimal number, Please enter a whole number")
             continue
         else:
+            dice = int(dice)
             if dice > 6 or dice < 1:
-                print("Out of Range, try 1-6 instead")
+                print("Out of range, try between 1 and 6")
                 continue
-            break
-    while True:
+            is_valid = 1
+
+    # NUMBER OF SIDES INPUT
+    is_valid = 0
+    while is_valid != 1:
+        sides = input("How many sides does the dice have?")
         try:
-            sides = int(input("How many sides does the dice have?"))
+            int(sides)
         except ValueError:
-            print("you didn't enter a number :-)")
+            try:
+                float(sides)
+            except ValueError:
+                print("Sorry you entered a string, Please enter a whole number")
+                continue
+            else:
+                print("Sorry you entered a decimal number, Please enter a whole number")
             continue
         else:
+            sides = int(sides)
             if sides > 20 or sides < 4:
-                print("Out of range, try 4-20 instead")
+                print("Out of range, try between 4 and 20")
                 continue
-            break
+            is_valid = 1
     return dice, sides
 
 
