@@ -23,22 +23,22 @@ def getUserInput():
         try:
             dice = int(input("How many dice to roll?"))
         except ValueError:
-            print("Invalid input.. please Enter a number")
+            print("You didn't enter a number :-)")
             continue
         else:
             if dice > 6 or dice < 1:
-                print("Invalid selection! (1-6) Try again...")
+                print("Out of Range, try 1-6 instead")
                 continue
             break
     while True:
         try:
             sides = int(input("How many sides does the dice have?"))
         except ValueError:
-            print("Invalid input.. please Enter a number")
+            print("you didn't enter a number :-)")
             continue
         else:
             if sides > 20 or sides < 4:
-                print("Invalid selection! (4-20) Try again..")
+                print("Out of range, try 4-20 instead")
                 continue
             break
     return dice, sides
@@ -53,11 +53,11 @@ def menu():
         try:
             choice = int(input("What Would you like to do?"))
         except ValueError:
-            print("Invalid Selection! Try again...")
+            print("you didn't enter a number :-)")
             continue
         else:
             if choice > 2 or choice < 1:
-                print("Invalid Selection! Try again...")
+                print("Out of range, try 1 or 2 instead :-)")
                 continue
             break
     return choice
